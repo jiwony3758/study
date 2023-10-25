@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function App() {
+      const [counter, setCounter] = React.useState(0);
+      const onClick = () => {
+        // setCounter(counter+1);
+        setCounter(current => current+1);
+      }
+      return (
+        <div>
+          <h3>Total Clicks: { counter }</h3>
+          <button onClick={onClick}>Click</button>
+        </div>
+      )
+    }
+    const root = document.getElementById("root");
+    ReactDOM.render(<App/>, root);
+  </script>
+</html>
